@@ -19,17 +19,17 @@ namespace DataAccess
             throw new NotImplementedException();
         }
 
-        public void Connect(Dictionary<string, string> connectionOpts)
+        public Task Connect(Dictionary<string, string> connectionOpts)
         {
             throw new NotImplementedException();
         }
 
-        public bool CreateDatabase()
+        public Task<bool> CreateDatabase()
         {
             throw new NotImplementedException();
         }
 
-        public bool DeleteDatabase()
+        public Task<bool> DeleteDatabase()
         {
             throw new NotImplementedException();
         }
@@ -39,7 +39,7 @@ namespace DataAccess
             throw new NotImplementedException();
         }
 
-        public int ExecuteSqlQuery(string statement, Dictionary<string, object> parameters)
+        public Task<int> ExecuteSqlQuery(string statement, Dictionary<string, object> parameters, CmdType commandType, bool forceTimeoutOff)
         {
             throw new NotImplementedException();
         }
@@ -49,42 +49,22 @@ namespace DataAccess
             throw new NotImplementedException();
         }
 
-        public DataSet GetDataSet(string statement, Dictionary<string, object> parameters)
+        public Task<DataSet> GetDataSet(string statement, Dictionary<string, object> parameters, CmdType commandType, bool forceTimeoutOff)
         {
             throw new NotImplementedException();
         }
 
-        public DataTable GetDataTable(string statement, Dictionary<string, object> parameters)
+        public Task<DataTable> GetDataTable(string statement, Dictionary<string, object> parameters, CmdType commandType, bool forceTimeoutOff)
         {
             throw new NotImplementedException();
         }
 
-        public object GetValue(string statement, Dictionary<string, object> parameters)
+        public Task<object> GetValue(string statement, Dictionary<string, object> parameters, CmdType commandType, bool forceTimeoutOff)
         {
             throw new NotImplementedException();
         }
 
         public void RollbackTransaction()
-        {
-            throw new NotImplementedException();
-        }
-
-        public bool SetDataTable(DataTable table, string tableName, string fields)
-        {
-            throw new NotImplementedException();
-        }
-
-        public int SqlDelete(string statement, Dictionary<string, object> parameters)
-        {
-            throw new NotImplementedException();
-        }
-
-        public int SqlInsert(string statement, Dictionary<string, object> parameters)
-        {
-            throw new NotImplementedException();
-        }
-
-        public int SqlUpdate(string statement, Dictionary<string, object> parameters)
         {
             throw new NotImplementedException();
         }

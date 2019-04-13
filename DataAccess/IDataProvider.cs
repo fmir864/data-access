@@ -9,24 +9,31 @@ namespace DataAccess
 {
     public interface IDataProvider
     {
-        void Connect(Dictionary<String, String> connectionOpts);
+        Task Connect(Dictionary<String, String> connectionOpts);
         void Disconnect();
         void BeginTransaction();
         void CommitTransaction();
         void RollbackTransaction();
-        bool CreateDatabase();
-        bool DeleteDatabase();
+        Task<bool> CreateDatabase();
+        Task<bool> DeleteDatabase();
         string GetConnectionString();
 
-        object GetValue(string statement, Dictionary<string, object> parameters);
-        DataSet GetDataSet(string statement, Dictionary<string, object> parameters);
-        DataTable GetDataTable(string statement, Dictionary<string, object> parameters);
+        Task<object> GetValue(string statement, Dictionary<string, object> parameters, CmdType commandType, bool forceTimeoutOff);
+        Task<DataSet> GetDataSet(string statement, Dictionary<string, object> parameters, CmdType commandType, bool forceTimeoutOff);
+        Task<DataTable> GetDataTable(string statement, Dictionary<string, object> parameters, CmdType commandType, bool forceTimeoutOff);
 
-        bool SetDataTable(DataTable table, string tableName, string fields);
+        //Task<bool> SetDataTable(DataTable table, string tableName, string fields);
 
-        int SqlInsert(string statement, Dictionary<string, object> parameters);
-        int SqlUpdate(string statement, Dictionary<string, object> parameters);
-        int SqlDelete(string statement, Dictionary<string, object> parameters);
-        int ExecuteSqlQuery(string statement, Dictionary<string, object> parameters);
+        //Task<int> SqlInsert(string statement, Dictionary<string, object> parameters, CmdType commandType);
+        //Task<int> SqlUpdate(string statement, Dictionary<string, object> parameters, CmdType commandType);
+        //Task<int> SqlDelete(string statement, Dictionary<string, object> parameters, CmdType commandType);
+        Task<int> ExecuteSqlQuery(string statement, Dictionary<string, object> parameters, CmdType commandType, bool forceTimeoutOff);
+    }
+
+    public enum CmdType
+    {
+        Text = 1,
+        StoredProcedure = 2,
+        TableDirect = 3
     }
 }
