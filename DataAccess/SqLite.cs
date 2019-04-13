@@ -1,9 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Data;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace DataAccess
 {
@@ -39,7 +36,7 @@ namespace DataAccess
             throw new NotImplementedException();
         }
 
-        public int ExecuteSqlQuery(string statement, Dictionary<string, object> parameters)
+        public int ExecuteSqlQuery(string statement, Dictionary<string, object> parameters, CmdType commandType, bool forceTimeoutOff)
         {
             throw new NotImplementedException();
         }
@@ -49,42 +46,22 @@ namespace DataAccess
             throw new NotImplementedException();
         }
 
-        public DataSet GetDataSet(string statement, Dictionary<string, object> parameters)
+        public DataSet GetDataSet(string statement, Dictionary<string, object> parameters, CmdType commandType, bool forceTimeoutOff)
         {
             throw new NotImplementedException();
         }
 
-        public DataTable GetDataTable(string statement, Dictionary<string, object> parameters)
+        public DataTable GetDataTable(string statement, Dictionary<string, object> parameters, CmdType commandType, bool forceTimeoutOff)
         {
             throw new NotImplementedException();
         }
 
-        public object GetValue(string statement, Dictionary<string, object> parameters)
+        public object GetValue(string statement, Dictionary<string, object> parameters, CmdType commandType, bool forceTimeoutOff)
         {
             throw new NotImplementedException();
         }
 
         public void RollbackTransaction()
-        {
-            throw new NotImplementedException();
-        }
-
-        public bool SetDataTable(DataTable table, string tableName, string fields)
-        {
-            throw new NotImplementedException();
-        }
-
-        public int SqlDelete(string statement, Dictionary<string, object> parameters)
-        {
-            throw new NotImplementedException();
-        }
-
-        public int SqlInsert(string statement, Dictionary<string, object> parameters)
-        {
-            throw new NotImplementedException();
-        }
-
-        public int SqlUpdate(string statement, Dictionary<string, object> parameters)
         {
             throw new NotImplementedException();
         }

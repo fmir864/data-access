@@ -1,9 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Data;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace DataAccess
 {
@@ -18,15 +15,22 @@ namespace DataAccess
         bool DeleteDatabase();
         string GetConnectionString();
 
-        object GetValue(string statement, Dictionary<string, object> parameters);
-        DataSet GetDataSet(string statement, Dictionary<string, object> parameters);
-        DataTable GetDataTable(string statement, Dictionary<string, object> parameters);
+        object GetValue(string statement, Dictionary<string, object> parameters, CmdType commandType, bool forceTimeoutOff);
+        DataSet GetDataSet(string statement, Dictionary<string, object> parameters, CmdType commandType, bool forceTimeoutOff);
+        DataTable GetDataTable(string statement, Dictionary<string, object> parameters, CmdType commandType, bool forceTimeoutOff);
 
-        bool SetDataTable(DataTable table, string tableName, string fields);
+        //bool SetDataTable(DataTable table, string tableName, string fields);
 
-        int SqlInsert(string statement, Dictionary<string, object> parameters);
-        int SqlUpdate(string statement, Dictionary<string, object> parameters);
-        int SqlDelete(string statement, Dictionary<string, object> parameters);
-        int ExecuteSqlQuery(string statement, Dictionary<string, object> parameters);
+        //int SqlInsert(string statement, Dictionary<string, object> parameters, CmdType commandType);
+        //int SqlUpdate(string statement, Dictionary<string, object> parameters, CmdType commandType);
+        //int SqlDelete(string statement, Dictionary<string, object> parameters, CmdType commandType);
+        int ExecuteSqlQuery(string statement, Dictionary<string, object> parameters, CmdType commandType, bool forceTimeoutOff);
+    }
+
+    public enum CmdType
+    {
+        Text = 1,
+        StoredProcedure = 2,
+        TableDirect = 3
     }
 }
