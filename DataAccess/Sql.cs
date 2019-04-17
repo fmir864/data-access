@@ -59,7 +59,7 @@ namespace DataAccess
             return connectionStringBuilder.ConnectionString;
         }
 
-        public async Task Connect(Dictionary<string, string> connectionOpts)
+        public async Task ConnectAsync(Dictionary<string, string> connectionOpts)
         {
             if (Connection != null && Connection.State.Equals(ConnectionState.Open))
                 return;
@@ -76,7 +76,7 @@ namespace DataAccess
 
         #region Execution
 
-        public async Task<int> ExecuteSqlQuery(string statement, Dictionary<string, object> parameters, CmdType commandType, bool forceTimeoutOff)
+        public async Task<int> ExecuteSqlQueryAsync(string statement, Dictionary<string, object> parameters, CmdType commandType, bool forceTimeoutOff)
         {
             using (SqlCommand command = Connection.CreateCommand())
             {
@@ -91,7 +91,7 @@ namespace DataAccess
             }
         }
 
-        public async Task<DataSet> GetDataSet(string statement, Dictionary<string, object> parameters, CmdType commandType, bool forceTimeoutOff)
+        public async Task<DataSet> GetDataSetAsync(string statement, Dictionary<string, object> parameters, CmdType commandType, bool forceTimeoutOff)
         {
             using (SqlCommand command = Connection.CreateCommand())
             {
@@ -113,7 +113,7 @@ namespace DataAccess
             }
         }
 
-        public async Task<DataTable> GetDataTable(string statement, Dictionary<string, object> parameters, CmdType commandType, bool forceTimeoutOff)
+        public async Task<DataTable> GetDataTableAsync(string statement, Dictionary<string, object> parameters, CmdType commandType, bool forceTimeoutOff)
         {
             using (SqlCommand command = Connection.CreateCommand())
             {
@@ -135,7 +135,7 @@ namespace DataAccess
             }
         }
 
-        public async Task<object> GetValue(string statement, Dictionary<string, object> parameters, CmdType commandType, bool forceTimeoutOff)
+        public async Task<object> GetValueAsync(string statement, Dictionary<string, object> parameters, CmdType commandType, bool forceTimeoutOff)
         {
             using (SqlCommand command = Connection.CreateCommand())
             {
@@ -184,12 +184,12 @@ namespace DataAccess
 
         #region Database Manipulations
 
-        public Task<bool> CreateDatabase()
+        public Task<bool> CreateDatabaseAsync()
         {
             throw new NotImplementedException();
         }
 
-        public Task<bool> DeleteDatabase()
+        public Task<bool> DeleteDatabaseAsync()
         {
             throw new NotImplementedException();
         }

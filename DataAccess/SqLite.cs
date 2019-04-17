@@ -17,17 +17,17 @@ namespace DataAccess
             throw new NotImplementedException();
         }
 
-        public Task Connect(Dictionary<string, string> connectionOpts)
+        public Task ConnectAsync(Dictionary<string, string> connectionOpts)
         {
             throw new NotImplementedException();
         }
 
-        public Task<bool> CreateDatabase()
+        public Task<bool> CreateDatabaseAsync()
         {
             throw new NotImplementedException();
         }
 
-        public Task<bool> DeleteDatabase()
+        public Task<bool> DeleteDatabaseAsync()
         {
             throw new NotImplementedException();
         }
@@ -37,7 +37,7 @@ namespace DataAccess
             throw new NotImplementedException();
         }
 
-        public Task<int> ExecuteSqlQuery(string statement, Dictionary<string, object> parameters, CmdType commandType, bool forceTimeoutOff)
+        public Task<int> ExecuteSqlQueryAsync(string statement, Dictionary<string, object> parameters, CmdType commandType, bool forceTimeoutOff)
         {
             throw new NotImplementedException();
         }
@@ -47,17 +47,17 @@ namespace DataAccess
             throw new NotImplementedException();
         }
 
-        public Task<DataSet> GetDataSet(string statement, Dictionary<string, object> parameters, CmdType commandType, bool forceTimeoutOff)
+        public Task<DataSet> GetDataSetAsync(string statement, Dictionary<string, object> parameters, CmdType commandType, bool forceTimeoutOff)
         {
             throw new NotImplementedException();
         }
 
-        public Task<DataTable> GetDataTable(string statement, Dictionary<string, object> parameters, CmdType commandType, bool forceTimeoutOff)
+        public Task<DataTable> GetDataTableAsync(string statement, Dictionary<string, object> parameters, CmdType commandType, bool forceTimeoutOff)
         {
             throw new NotImplementedException();
         }
 
-        public Task<object> GetValue(string statement, Dictionary<string, object> parameters, CmdType commandType, bool forceTimeoutOff)
+        public Task<object> GetValueAsync(string statement, Dictionary<string, object> parameters, CmdType commandType, bool forceTimeoutOff)
         {
             throw new NotImplementedException();
         }
